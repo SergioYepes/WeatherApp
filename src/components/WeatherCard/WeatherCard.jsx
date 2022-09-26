@@ -1,16 +1,19 @@
 import React from 'react'
+import card from "./weatherCard.module.css"
 
 function WeatherCard({weather}) {
   return (
-    <div>
-      <div>{weather?.location.name}</div>
-      <div>{weather?.location.country}</div>
-      <div>
-        <img src={`http:${weather?.current.condition.icon}`}alt={weather?.current.condition.text} width="128" />
-      </div>
-      <div>
-        <div>{weather?.current.temp_c}°</div>
-        <div>{weather?.location.lat}</div>
+    <div className={card.mainInfo}>
+      <div className={card.city}>{weather?.location.name}</div>
+      <div className={card.country}>{weather?.location.country}</div>
+      <div className={card.row}>
+        <div >
+            <img src={`http:${weather?.current.condition.icon}`}alt={weather?.current.condition.text} width="128" />
+        </div>
+        <div className={card.Wconditions}>
+            <div className={card.condition}>{weather?.current.temp_c}°</div>
+            <div className={card.current}>{weather?.current.condition.text}</div>
+        </div>
       </div>
       {/* <div>
       <iframe 

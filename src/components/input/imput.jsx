@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Input from './Input.module.css'
 
 function Imput({onChCity}) {
     const [city,setCity]=useState("")
@@ -13,8 +14,8 @@ function Imput({onChCity}) {
         onChCity(city)
     }
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="text" onChange={handleChange}/>
+    <form onSubmit={handleSubmit} className={Input.container}>
+      <input type="text" onChange={handleChange} className={Input.input}/>
     </form>
   )
 }

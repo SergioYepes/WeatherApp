@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import Imput from '../input/Input';
+import Imput from '../input/imput';
+import Loading from '../loading/Loading';
 import WeatherCard from '../WeatherCard/WeatherCard';
 import weatherA from "./weatherApp.module.css"
 
@@ -39,10 +40,10 @@ function WeatherApp() {
 
 
   return (
-    <div>
-    
-        <Imput onChCity={handleChangeCity}/>       
-        <WeatherCard weather={weather} /> 
+    <div className={weatherA.container}>
+        <Imput onChCity={handleChangeCity}/> 
+        {weather ? <WeatherCard weather={weather} /> : <Loading/>}      
+         
     </div>
   )
 }
