@@ -22,7 +22,7 @@ function WeatherApp() {
     async function loadInfo(city="bogota"){
       try {
         const request= await fetch(
-          `http://api.weatherapi.com/v1/current.json?key=${REACT_APP_APIKEY}&q=${city}&aqi=no`
+          `https://api.weatherapi.com/v1/current.json?key=${REACT_APP_APIKEY}&q=${city}&aqi=no`
           )
          const json= await request.json()
          console.log(json);
